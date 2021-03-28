@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+
+
+{% block title %}
+    {{ super() }}
+    Welcom
+{% endblock %}
+
+{% block content %} 
+
+    <div class="container">
+        <form action="{{ url_for('calculate') }}" method="POST" role="form">
+            {{ data_in.csrf }}
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="What's the name of your country?" required>
+
+                <label for="economy">Economy:</label>
+                <input type="text" class="form-control" id="economy" name="economy" placeholder="What's the economy score?" required>
+
+                <label for="family">Family:</label>
+                <input type="text" class="form-control" id="family" name="family" placeholder="What's the family score?" required>
+
+                <label for="health">Health:</label>
+                <input type="text" class="form-control" id="health" name="health" placeholder="What's the health score?" required>
+
+                <label for="freedom">Freedom:</label>
+                <input type="text" class="form-control" id="freedom" name="freedom" placeholder="What's the freedom score?" required>
+
+                <label for="trust">Trust:</label>
+                <input type="text" class="form-control" id="trust" name="trust" placeholder="What's the trust score?" required>
+
+                <label for="generosity">Generosity:</label>
+                <input type="text" class="form-control" id="generosity" name="generosity" placeholder="What's the generosity score?" required>
+
+                <label for="dystopia">Dystopia:</label>
+                <input type="text" class="form-control" id="dystopia" name="dystopia" placeholder="What's the dystopia score?" required>
+             
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+
+    {% if prediction %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">All good!</h4>
+            <p>The prediction of happiness of the country {{ country_name }} is:</p>
+            <hr>
+            <p class="mb-0">{{ prediction[0] }}</p>
+        </div>
+    {% endif %}
+    
+{% endblock %} 
+
+
