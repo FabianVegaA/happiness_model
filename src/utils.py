@@ -1,11 +1,17 @@
 import pandas as pd
 import joblib
 
+from transform_load import (
+    Transform, 
+    Load
+)
+
 
 class Utils():
 
-    def load_from_csv(self, path):
-        return pd.read_csv(path)
+    def load_from_csv(self):
+        loader = Load()
+        return loader.load_from_csv('./out/merged.csv')
 
     def load_from_mysql(self):
         pass
