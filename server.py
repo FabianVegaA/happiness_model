@@ -94,6 +94,10 @@ def calculate():
 
     return render_template('country_data.html', **context)
 
+@app.route('/about', methods=['GET'])
+def about():
+    return render_template('about.html')
+
 
 if __name__ == "__main__":
     app.run()
