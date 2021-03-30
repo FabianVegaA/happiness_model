@@ -34,7 +34,7 @@ class Transform:
         df_merged = df_merged[allowed_cols].astype(float)
         df_merged = df_merged.dropna()
         print(df_merged.head())
-        df_merged.to_csv('./out/merged.csv')
+        df_merged[allowed_cols].to_csv('./out/merged.csv', columns=allowed_cols, index=False)
 
     def firt_word(self, sense):
         return re.findall(r'\w+', sense)[0]
