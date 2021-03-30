@@ -59,14 +59,16 @@ def index():
 def predict():
     x_test = np.array([0.20868, 0.13995, 0.28443,
                       0.36453, 0.10731, 0.16681, 1.56726])
+    
+    model = joblib.load('./models/best_model.pkl')
     prediction = model.predict(x_test.reshape(1, -1))
     return jsonify({'prediction': list(prediction)})
 
 
 @app.route('/calculate', methods=['GET', 'POST'])
 def calculate():
+    
     model = joblib.load('./models/best_model.pkl')
-
     data_in = CountryData(request.form)
 
     context = {
@@ -93,6 +95,6 @@ def calculate():
     return render_template('country_data.html', **context)
 
 
-if __name__ == "__main__":
-    model = joblib.load('./models/best_model.pkl')
-    app.run(port=8080, debug=True)
+# if __name__ == "__main__":
+#     model = joblib.load('./models/best_model.pkl')
+#     app.run(port=8080, debug=True)
