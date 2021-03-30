@@ -2,7 +2,7 @@ import pandas as pd
 import joblib
 
 from transform_load import (
-    Transform, 
+    Transform,
     Load
 )
 

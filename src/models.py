@@ -27,14 +27,14 @@ class Models:
             },
         }
 
-    def grid_training(self, X, y):
+    def grid_training(self, x, y):
 
         best_score = 999
         best_model = None
 
         for name, reg in self.reg.items():
             grid_reg = GridSearchCV(
-                reg, self.params[name], cv=3).fit(X, y.values.ravel())
+                reg, self.params[name], cv=5).fit(x, y.values.ravel())
             score = np.abs(grid_reg.best_score_)
 
             if score < best_score:
