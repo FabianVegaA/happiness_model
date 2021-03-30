@@ -96,5 +96,4 @@ def calculate():
 
 
 if __name__ == "__main__":
-    model = joblib.load('./models/best_model.pkl')
-    app.run(port=8080, debug=True)
+    app.run()
