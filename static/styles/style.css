@@ -1,10 +1,7 @@
 nav{
     margin-bottom: 15px;
 }
-body{
-    margin-bottom: 15px;
-    
-}
+
 footer contact{
     color: #fff;
 }
@@ -19,8 +16,22 @@ footer{
     font-family: sans-serif;
 }
 
+code{
+    color:slategrey;
+    size: 5;
+}
+
+.content{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .container{
     padding-bottom: 2%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .filter-white{
